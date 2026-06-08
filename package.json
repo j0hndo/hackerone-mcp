@@ -1,6 +1,6 @@
 {
   "name": "hackerone-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for the HackerOne Hacker API (Hackers section only). Built from https://api.hackerone.com/hacker-resources/",
   "type": "module",
   "main": "src/index.js",
