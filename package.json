@@ -1,0 +1,39 @@
+{
+  "name": "hackerone-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for the HackerOne Hacker API (Hackers section only). Built from https://api.hackerone.com/hacker-resources/",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "hackerone-mcp": "src/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "hackerone",
+    "bug-bounty",
+    "security",
+    "claude"
+  ],
+  "homepage": "https://github.com/j0hndo/hackerone-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j0hndo/hackerone-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/j0hndo/hackerone-mcp/issues"
+  },
+  "author": "j0hndo",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "smoke": "node scripts/smoke.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
