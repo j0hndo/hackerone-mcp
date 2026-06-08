@@ -39,20 +39,32 @@ Authentication is HTTP Basic using your **token identifier** as the username and
 
 ---
 
-## 🚀 Install
+## 🔌 Register in Claude Code
+
+Add one of the blocks below to your `~/.claude.json` under `mcpServers`, then
+restart Claude Code (or reconnect the server).
+
+### Option A — via `npx` (recommended, no clone)
+
+```json
+"hackerone": {
+  "command": "npx",
+  "args": ["-y", "hackerone-mcp"],
+  "env": {
+    "H1_USERNAME": "YOUR-USERNAME",
+    "H1_API_TOKEN": "YOUR-TOKEN"
+  },
+  "type": "stdio"
+}
+```
+
+### Option B — from a local clone
 
 ```bash
 git clone https://github.com/j0hndo/hackerone-mcp.git
 cd hackerone-mcp
 npm install
 ```
-
----
-
-## 🔌 Register in Claude Code
-
-Add the block below to your `~/.claude.json` under `mcpServers`, then restart
-Claude Code (or reconnect the server).
 
 ```json
 "hackerone": {
@@ -70,11 +82,11 @@ Claude Code (or reconnect the server).
 
 | Field | Value |
 |---|---|
-| `args[0]` | Absolute path to `src/index.js` in this folder. On Windows use forward slashes, e.g. `C:/Users/you/hackerone-mcp/src/index.js` |
+| `args` (Option B) | Absolute path to `src/index.js` in this folder. On Windows use forward slashes, e.g. `C:/Users/you/hackerone-mcp/src/index.js` |
 | `H1_USERNAME` | Your HackerOne API token **identifier** |
 | `H1_API_TOKEN` | Your HackerOne API token **value** |
 
-> Works with any MCP client over **stdio**, not just Claude Code — point your client at `node src/index.js` with the two env vars set.
+> Works with any MCP client over **stdio**, not just Claude Code — point your client at `npx -y hackerone-mcp` (or `node src/index.js`) with the two env vars set.
 
 ---
 
